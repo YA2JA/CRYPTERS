@@ -6,14 +6,8 @@ while True:
 	print("3- Chiffrement affine", end = "			")
 	print("4- Chiffrement  de Port")
 	answer = input("")
-	if answer == "1":
-		algorithms.N1()
-	elif answer=="2":
-		algorithms.N2()
-	elif answer=="3":
-		algorithms.N3()
-	elif answer=="4":
-		algorithms.N4()
-	else:
-		print("Pardon, j'ai pas compris")
-	input()
+	try:
+		eval("algorithms.N"+answer+"()")#Execute the function N1, N2, N3 or N4
+		print("\n"*2,"_"*60)
+	except:
+		print("Pardon, j'ai pas compris","\n"*2, "_"*60)
